@@ -1,20 +1,20 @@
 # Swap-Mukham
 [![Open In Colab](https://img.shields.io/badge/Open%20In-Colab-blue?logo=google-colab&logoColor=white)](https://colab.research.google.com/github/harisreedhar/Swap-Mukham/blob/main/swap_mukham_colab.ipynb)
 [![Hugging Face](https://img.shields.io/badge/Demo-%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/bluefoxcreation/SwapMukham)
-## Description
+## 描述
 
-A simple face swapper based on insightface inswapper heavily inspired by roop.
+一个简单的面部交换器，基于insightface inswapper，很大程度上受到roop的启发。
 
-## Check [latest Swap-Mukham WIP repository](https://github.com/harisreedhar/Swap-Mukham/tree/new-wip)
+## 查看[最新的 Swap-Mukham WIP 仓库](https://github.com/harisreedhar/Swap-Mukham/tree/new-wip)
 
-## Features
-- Easy to use Gradio gui
-- Support Image, Video, Directory inputs
-- Swap specific face (face recognition)
-- Video trim tool
-- Face enhancer (GFPGAN, Real-ESRGAN)
-- Face parsing mask
-- colab support
+## 特征
+- 易于使用的渐变图形用户界面
+- 支持图片、视频、目录输入
+- 达成场景特定（人脸识别）
+- 视频工具修剪
+- 人脸增强器（GFPGAN、Real-ESRGAN）
+- 人脸解析地址
+- 合作实验室支持
 
 https://github.com/harisreedhar/Swap-Mukham/assets/46858047/d8f2389a-3078-43a1-94f8-77f30a8c6686
 
@@ -23,8 +23,8 @@ https://github.com/harisreedhar/Swap-Mukham/assets/46858047/d8f2389a-3078-43a1-9
 ![10](https://github.com/harisreedhar/Swap-Mukham/assets/46858047/37035b9d-915d-4be6-9e21-5852c88a3e12)
 
 
-## Installation
-### CPU Install
+## 安装
+### CPU安装
 ````
 git clone https://github.com/harisreedhar/Swap-Mukham
 cd Swap-Mukham
@@ -34,7 +34,7 @@ pip install torch==2.0.0+cpu torchvision==0.15.1+cpu torchaudio==2.0.1 --index-u
 pip install -r requirements_cpu.txt
 python app.py
 ````
-### GPU Install (CUDA)
+### GPU 安装 (CUDA)
 ````
 git clone https://github.com/harisreedhar/Swap-Mukham
 cd Swap-Mukham
@@ -53,38 +53,29 @@ python app.py --cuda --batch_size 32
 - [RealESRGAN_x8.pth](https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x8.pth)
 - [codeformer.onnx](https://huggingface.co/bluefoxcreation/Codeformer-ONNX/resolve/main/codeformer.onnx)
 - [open-nsfw.onnx](https://huggingface.co/bluefoxcreation/open-nsfw/resolve/main/open-nsfw.onnx)
-- place these models inside ``/assets/pretrained_models/``
+ 将这些模型放入里面 ``/assets/pretrained_models/``
 
-## Disclaimer
+## 免责声明
 
-We would like to emphasize that our deep fake software is intended for responsible and ethical use only. We must stress that **users are solely responsible for their actions when using our software**.
+我们想强调的是，我们的深度创造了一个软件，以谋求并合乎道德的使用。我们必须强调，用户对使用我们软件时的行为承担全部责任。
 
-1. Intended Usage:
-Our deep fake software is designed to assist users in creating realistic and entertaining content, such as movies, visual effects, virtual reality experiences, and other creative applications. We encourage users to explore these possibilities within the boundaries of legality, ethical considerations, and respect for others' privacy.
+预期用途：我们的深度伪造软件旨在帮助用户创建逼真且有趣的内容，例如电影、视觉效果、虚拟现实体验和其他创意应用程序。我们鼓励用户在合法性、道德考虑和尊重他人隐私的范围内探索这些可能性。
 
-2. Ethical Guidelines:
-Users are expected to adhere to a set of ethical guidelines when using our software. These guidelines include, but are not limited to:
+道德准则：用户在使用我们的软件时应遵守一套道德准则。这些指南包括但不限于：
 
-Not creating or sharing deep fake content that could harm, defame, or harass individuals.
-Obtaining proper consent and permissions from individuals featured in the content before using their likeness.
-Avoiding the use of deep fake technology for deceptive purposes, including misinformation or malicious intent.
-Respecting and abiding by applicable laws, regulations, and copyright restrictions.
+不创建或分享可能伤害、诽谤或骚扰个人的深度虚假内容。在使用内容中的个人肖像之前，获得其适当的同意和许可。避免将深度造假技术用于欺骗目的，包括错误信息或恶意意图。尊重并遵守适用的法律、法规和版权限制。
 
-3. Privacy and Consent:
-Users are responsible for ensuring that they have the necessary permissions and consents from individuals whose likeness they intend to use in their deep fake creations. We strongly discourage the creation of deep fake content without explicit consent, particularly if it involves non-consensual or private content. It is essential to respect the privacy and dignity of all individuals involved.
+隐私和同意：用户有责任确保他们获得了他们打算在深度伪造作品中使用其肖像的个人的必要许可和同意。我们强烈反对在未经明确同意的情况下创建深度虚假内容，特别是涉及未经同意或私人内容的情况。尊重所有相关个人的隐私和尊严至关重要。
 
-4. Legal Considerations:
-Users must understand and comply with all relevant local, regional, and international laws pertaining to deep fake technology. This includes laws related to privacy, defamation, intellectual property rights, and other relevant legislation. Users should consult legal professionals if they have any doubts regarding the legal implications of their deep fake creations.
+法律注意事项：用户必须了解并遵守与深度造假技术有关的所有相关本地、区域和国际法律。这包括与隐私、诽谤、知识产权相关的法律以及其他相关立法。如果用户对其深度造假作品的法律影响有任何疑问，应咨询法律专业人士。
 
-5. Liability and Responsibility:
-We, as the creators and providers of the deep fake software, cannot be held responsible for the actions or consequences resulting from the usage of our software. Users assume full liability and responsibility for any misuse, unintended effects, or abusive behavior associated with the deep fake content they create.
+责任与义务：我们作为深度造假软件的创建者和提供者，不对因使用我们的软件而导致的行为或后果承担责任。用户对与其创建的深度虚假内容相关的任何误用、意外影响或滥用行为承担全部责任。
 
-By using our deep fake software, users acknowledge that they have read, understood, and agreed to abide by the above guidelines and disclaimers. We strongly encourage users to approach deep fake technology with caution, integrity, and respect for the well-being and rights of others.
+通过使用我们的 Deepfake 软件，用户承认他们已阅读、理解并同意遵守上述指南和免责声明。我们强烈鼓励用户严格、诚信并尊重他人的福祉和权利来使用深度造假技术。
 
-Remember, technology should be used to empower and inspire, not to harm or deceive. Let's strive for ethical and responsible use of deep fake technology for the betterment of society.
+请记住，技术应该用于赋予权力和激励，而不是用于伤害或欺骗。让我们努力以道德和税收的方式利用深度造假技术，改善社会。
 
-
-## Acknowledgements
+## 致谢
 
 - [Roop](https://github.com/s0md3v/roop)
 - [Insightface](https://github.com/deepinsight)
@@ -96,7 +87,7 @@ Remember, technology should be used to empower and inspire, not to harm or decei
 - [Open-NSFW](https://github.com/yahoo/open_nsfw)
 - [Code-Former](https://github.com/sczhou/CodeFormer)
 
-## Loved my work?
+## 喜欢我的工作吗？
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/harisreedhar)
 
 ## License
