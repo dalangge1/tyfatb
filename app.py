@@ -560,16 +560,15 @@ css = """
 footer{display:none !important}
 """
 
-with gr.Blocks(css=css) as interface:
-    gr.Markdown("# 🗿 Swap Mukham")
-    gr.Markdown("### Face swap app based on insightface inswapper.")
+with gr.Blocks(theme='freddyaboulton/dracula_revamped') as interface:
+    gr.Markdown("### 基于insightface inswapper的换脸应用程序。")
     with gr.Row():
         with gr.Row():
             with gr.Column(scale=0.4):
-                with gr.Tab("📄 Swap Condition"):
+                with gr.Tab("📄 互换条件"):
                     swap_option = gr.Dropdown(
                         swap_options_list,
-                        info="Choose which face or faces in the target image to swap.",
+                        info="选择目标图像中要交换的一张或多张面孔。",
                         multiselect=False,
                         show_label=False,
                         value=swap_options_list[0],
@@ -579,40 +578,40 @@ with gr.Blocks(css=css) as interface:
                         value=25, label="Value", interactive=True, visible=False
                     )
 
-                with gr.Tab("🎚️ Detection Settings"):
+                with gr.Tab("🎚️ 检测设置"):
                     detect_condition_dropdown = gr.Dropdown(
                         detect_conditions,
-                        label="Condition",
+                        #label="Condition",
                         value=DETECT_CONDITION,
                         interactive=True,
-                        info="This condition is only used when multiple faces are detected on source or specific image.",
+                        info="仅当在源图像或特定图像上检测到多个人脸时才使用此条件",
                     )
                     detection_size = gr.Number(
-                        label="Detection Size", value=DETECT_SIZE, interactive=True
+                        label="检测尺寸", value=DETECT_SIZE, interactive=True
                     )
                     detection_threshold = gr.Number(
-                        label="Detection Threshold",
+                        label="检测阈值",
                         value=DETECT_THRESH,
                         interactive=True,
                     )
-                    apply_detection_settings = gr.Button("Apply settings")
+                    apply_detection_settings = gr.Button("应用设定")
 
-                with gr.Tab("📤 Output Settings"):
+                with gr.Tab("📤 输出设置"):
                     output_directory = gr.Text(
-                        label="Output Directory",
+                        label="输出目录",
                         value=DEF_OUTPUT_PATH,
                         interactive=True,
                     )
                     output_name = gr.Text(
-                        label="Output Name", value="Result", interactive=True
+                        label="输出名称", value="Result", interactive=True
                     )
                     keep_output_sequence = gr.Checkbox(
-                        label="Keep output sequence", value=False, interactive=True
+                        label="保持输出顺序", value=False, interactive=True
                     )
 
-                with gr.Tab("🪄 Other Settings"):
+                with gr.Tab("🪄 高级设置"):
                     face_scale = gr.Slider(
-                        label="Face Scale",
+                        label="脸部比例",
                         minimum=0,
                         maximum=2,
                         value=1,
@@ -620,12 +619,12 @@ with gr.Blocks(css=css) as interface:
                     )
 
                     face_enhancer_name = gr.Dropdown(
-                        FACE_ENHANCER_LIST, label="Face Enhancer", value="NONE", multiselect=False, interactive=True
+                        FACE_ENHANCER_LIST, label="面部增强", value="NONE", multiselect=False, interactive=True
                     )
 
-                    with gr.Accordion("Advanced Mask", open=False):
+                    with gr.Accordion("高级蒙版", open=False):
                         enable_face_parser_mask = gr.Checkbox(
-                            label="Enable Face Parsing",
+                            label="启用人脸解析",
                             value=False,
                             interactive=True,
                         )
@@ -634,7 +633,7 @@ with gr.Blocks(css=css) as interface:
                             mask_regions.keys(),
                             value=MASK_INCLUDE,
                             multiselect=True,
-                            label="Include",
+                            label="包含",
                             interactive=True,
                         )
                         mask_soft_kernel = gr.Number(
@@ -653,7 +652,7 @@ with gr.Blocks(css=css) as interface:
                         )
 
 
-                    with gr.Accordion("Crop Mask", open=False):
+                    with gr.Accordion("裁剪蒙版", open=False):
                         crop_top = gr.Slider(label="Top", minimum=0, maximum=511, value=0, step=1, interactive=True)
                         crop_bott = gr.Slider(label="Bottom", minimum=0, maximum=511, value=511, step=1, interactive=True)
                         crop_left = gr.Slider(label="Left", minimum=0, maximum=511, value=0, step=1, interactive=True)
@@ -679,14 +678,14 @@ with gr.Blocks(css=css) as interface:
                         )
 
                     enable_laplacian_blend = gr.Checkbox(
-                        label="Laplacian Blending",
+                        label="混合",
                         value=True,
                         interactive=True,
                     )
 
 
                 source_image_input = gr.Image(
-                    label="Source face", type="filepath", interactive=True
+                    label="来源脸", type="filepath", interactive=True
                 )
 
                 with gr.Box(visible=False) as specific_face:
@@ -704,8 +703,8 @@ with gr.Blocks(css=css) as interface:
                         maximum=2,
                         value=0.6,
                         interactive=True,
-                        label="Distance",
-                        info="Lower distance is more similar and higher distance is less similar to the target face.",
+                        label="距离",
+                        info="距离越短，与目标面部越相似，而距离越高，与目标面部越不相似。",
                     )
 
                 with gr.Group():
@@ -717,7 +716,7 @@ with gr.Blocks(css=css) as interface:
 
                     with gr.Box(visible=False) as input_image_group:
                         image_input = gr.Image(
-                            label="Target Image", interactive=True, type="filepath"
+                            label="任务图片", interactive=True, type="filepath"
                         )
 
                     with gr.Box(visible=True) as input_video_group:
@@ -772,8 +771,8 @@ with gr.Blocks(css=css) as interface:
                 info = gr.Markdown(value="...")
 
                 with gr.Row():
-                    swap_button = gr.Button("✨ Swap", variant="primary")
-                    cancel_button = gr.Button("⛔ Cancel")
+                    swap_button = gr.Button("✨ 换脸", variant="primary")
+                    cancel_button = gr.Button("⛔ 取消")
 
                 preview_image = gr.Image(label="Output", interactive=False)
                 preview_video = gr.Video(
@@ -787,24 +786,6 @@ with gr.Blocks(css=css) as interface:
                     output_video_button = gr.Button(
                         "🎬", interactive=False, visible=not USE_COLAB
                     )
-
-                with gr.Box():
-                    with gr.Row():
-                        gr.Markdown(
-                            "### [🤝 Sponsor](https://github.com/sponsors/harisreedhar)"
-                        )
-                        gr.Markdown(
-                            "### [👨‍💻 Source code](https://github.com/harisreedhar/Swap-Mukham)"
-                        )
-                        gr.Markdown(
-                            "### [⚠️ Disclaimer](https://github.com/harisreedhar/Swap-Mukham#disclaimer)"
-                        )
-                        gr.Markdown(
-                            "### [🌐 Run in Colab](https://colab.research.google.com/github/harisreedhar/Swap-Mukham/blob/main/swap_mukham_colab.ipynb)"
-                        )
-                        gr.Markdown(
-                            "### [🤗 Acknowledgements](https://github.com/harisreedhar/Swap-Mukham#acknowledgements)"
-                        )
 
     ## ------------------------------ GRADIO EVENTS ------------------------------
 
