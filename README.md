@@ -26,7 +26,7 @@ https://github.com/harisreedhar/Swap-Mukham/assets/46858047/d8f2389a-3078-43a1-9
 ## 安装
 ### CPU安装
 ````
-git clone https://github.com/harisreedhar/Swap-Mukham
+git clone https://github.com/douhaohaode/Swap-Mukham.git
 cd Swap-Mukham
 conda create -n swapmukham python=3.10 -y
 conda activate swapmukham
