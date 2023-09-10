@@ -6,7 +6,7 @@
 一个简单的面部交换器，基于insightface inswapper，很大程度上受到roop的启发。
 
 
-## 查看[使用教程](https://www.bilibili.com/video/BV1pN411p7vh/?vd_source=faa4615f3c71b2b526ed2b1f48a70b2c)
+## [使用教程 https://www.bilibili.com/video/BV1pN411p7vh/?vd_source=faa4615f3c71b2b526ed2b1f48a70b2c](https://www.bilibili.com/video/BV1pN411p7vh/?vd_source=faa4615f3c71b2b526ed2b1f48a70b2c)
 
 ## 特征
 - 易于使用的渐变图形用户界面
@@ -18,12 +18,14 @@
 - 合作实验室支持
 
 
-## 安装
+
+##  conda 安装
 ### CPU安装
 ````
 git clone https://github.com/douhaohaode/Swap-Mukham.git
 cd Swap-Mukham
-conda create -n swapmukham python=3.10 -y
+
+conda create -n swapmukham python=3.10 -y  
 conda activate swapmukham
 pip install torch==2.0.0+cpu torchvision==0.15.1+cpu torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cpu
 pip install -r requirements_cpu.txt
@@ -31,13 +33,32 @@ python app.py
 ````
 ### GPU 安装 (CUDA)
 ````
-git clone https://github.com/harisreedhar/Swap-Mukham
+git clone https://github.com/douhaohaode/Swap-Mukham.git
 cd Swap-Mukham
 conda create -n swapmukham python=3.10 -y
 conda activate swapmukham
 conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 pip install -r requirements.txt
 python app.py --cuda --batch_size 32
+
+
+
+## venv 安装
+
+```python
+
+git clone https://github.com/douhaohaode/Swap-Mukham.git
+cd Swap-Mukham
+python3 -m venv venv
+
+在 Windows 上，使用以下命令：
+venv\Scripts\activate
+在 macOS：
+source venv/bin/activate
+
+其他步骤如上
+```
+
 ````
 ## Download Models
 - [inswapper_128.onnx](https://huggingface.co/deepinsight/inswapper/resolve/main/inswapper_128.onnx)
@@ -49,6 +70,9 @@ python app.py --cuda --batch_size 32
 - [codeformer.onnx](https://huggingface.co/bluefoxcreation/Codeformer-ONNX/resolve/main/codeformer.onnx)
 - [open-nsfw.onnx](https://huggingface.co/bluefoxcreation/open-nsfw/resolve/main/open-nsfw.onnx)
  将这些模型放入里面 ``/assets/pretrained_models/``
+
+
+
 
 ## 免责声明
 
