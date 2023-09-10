@@ -17,9 +17,8 @@
 - 人脸解析地址
 - 合作实验室支持
 
+## 基础环境 ： git 和 pyrhon3.10 +   venv或者conda管理Python环境的工具
 
-
-##  conda 安装
 ### CPU安装
 ````
 git clone https://github.com/douhaohaode/Swap-Mukham.git
