@@ -5,7 +5,8 @@
 
 一个简单的面部交换器，基于insightface inswapper，很大程度上受到roop的启发。
 
-## 查看[最新的 Swap-Mukham WIP 仓库](https://github.com/harisreedhar/Swap-Mukham/tree/new-wip)
+
+## 查看[使用教程](https://www.bilibili.com/video/BV1pN411p7vh/?vd_source=faa4615f3c71b2b526ed2b1f48a70b2c)
 
 ## 特征
 - 易于使用的渐变图形用户界面
@@ -15,12 +16,6 @@
 - 人脸增强器（GFPGAN、Real-ESRGAN）
 - 人脸解析地址
 - 合作实验室支持
-
-https://github.com/harisreedhar/Swap-Mukham/assets/46858047/d8f2389a-3078-43a1-94f8-77f30a8c6686
-
-### Comparison
-
-![10](https://github.com/harisreedhar/Swap-Mukham/assets/46858047/37035b9d-915d-4be6-9e21-5852c88a3e12)
 
 
 ## 安装
