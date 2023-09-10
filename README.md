@@ -41,26 +41,23 @@ pip install -r requirements.txt
 python app.py --cuda --batch_size 32
 
 
-
-## venv 安装
+### MAC venv 安装 
 
 ```python
 
 git clone https://github.com/douhaohaode/Swap-Mukham.git
 cd Swap-Mukham
 python3 -m venv venv
-
-在 Windows 上，使用以下命令：
-venv\Scripts\activate
-在 macOS：
 source venv/bin/activate
+pip install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0
+pip install -r requirements.txt
+python3 app.py
 
-其他步骤如上
 ```
 
 ````
 ## Download Models
-- [inswapper_128.onnx](https://huggingface.co/deepinsight/inswapper/resolve/main/inswapper_128.onnx)
+- [inswapper_128.onnx](https://huggingface.co/thebiglaskowski/inswapper_128.onnx/resolve/main/inswapper_128.onnx)
 - [GFPGANv1.4.pth](https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pth)
 - [79999_iter.pth](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812)
 - [RealESRGAN_x2.pth](https://huggingface.co/ai-forever/Real-ESRGAN/resolve/main/RealESRGAN_x2.pth)
